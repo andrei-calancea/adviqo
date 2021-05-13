@@ -31,5 +31,6 @@ services:
     # please note that last definitions always *replace* previous ones
 
     App\Serializer\AdviserDenormalizer:
-        decorates: 'api_platform.serializer.normalizer.item'
+        decorates: 'api_platform.jsonld.normalizer.item'
+
 
