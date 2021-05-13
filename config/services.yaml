@@ -29,8 +29,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
+#
     App\Serializer\AdviserDenormalizer:
         decorates: 'api_platform.jsonld.normalizer.item'
 
+    app.serializer.normalizer.item.json:
+        class: 'App\Serializer\AdviserDenormalizer'
+        decorates: 'api_platform.serializer.normalizer.item'
 

@@ -56,7 +56,8 @@ class Adviser
      *             "example"=1
      *         }
      *     }
-     * )     */
+     * )
+     */
     private $id;
 
     /**
