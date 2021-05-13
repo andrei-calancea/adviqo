@@ -1,0 +1,9 @@
+# api/fixtures/adviser.yaml
+App\Entity\Adviser:
+  adviser_{1..2}:
+    name: <name()>
+    description: <randomHtml(2,3)>
+    availability: <boolean()>
+    pricePerMinute: <randomFloat(2, 10, 100)>
+    language: <languageCode()>
+    profileImage: iVBORw0KGgoAAAANSUhEUgAAABwAAAASCAMAAAB/2U7WAAAABlBMVEUAAAD///+l2Z/dAAAASUlEQVR4XqWQUQoAIAxC2/0vXZDrEX4IJTRkb7lobNUStXsB0jIXIAMSsQnWlsV+wULF4Avk9fLq2r8a5HSE35Q3eO2XP1A1wQkZSgETvDtKdQAAAABJRU5ErkJggg==

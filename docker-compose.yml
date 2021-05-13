@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/site.conf
+    restart: always
+    depends_on:
+      - php
+    links:
+      - php
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www/
+    working_dir: /var/www/
+    restart: always
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    ports:
+      - "3307:3306"
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
