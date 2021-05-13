@@ -14,6 +14,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class AdviserRepository extends ServiceEntityRepository
 {
+    public const PROFILE_IMAGE_WIDTH = 850;
+    public const PROFILE_IMAGE_HEIGHT = 850;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Adviser::class);
