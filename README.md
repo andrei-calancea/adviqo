@@ -17,6 +17,8 @@ The API online documentation is available accessing the link:
 3. Open terminal in current directory and run:
     - `docker-compose up -d` - building necessary docker containers;
     - `docker exec -it adviqo_php_1 composer install` - installing packages;
+    - `docker exec -it ca_php php bin/console doctrine:migrations:migrate` - applying the migrations;
+    - `docker exec -it ca_php php bin/console hautelook:fixtures:load` - loading the fixtures;
 
 After all installation steps are complete, open [http://localhost:8088][http://localhost:8088] to view local API documentation.
 
